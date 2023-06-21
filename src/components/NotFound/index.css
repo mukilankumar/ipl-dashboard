@@ -1,0 +1,23 @@
+/* Write your CSS here */
+.bg {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png');
+  background-size: cover;
+}
+.error-text {
+  font-size: 40px;
+  color: #ffffff;
+  font-family: 'bree serif';
+  font-weight: 800;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .bg {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+  }
+}
