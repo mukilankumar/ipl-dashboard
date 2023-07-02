@@ -15,11 +15,14 @@
   background-color: #ffffff30;
   min-height: 100px;
   cursor: pointer;
+  min-height: 100px;
 }
 
 .img {
   height: 50px;
   width: 50px;
+  object-fit: contain;
+  aspect-ratio: 3/2;
 }
 .team-name {
   font-family: 'Bree Serif';
@@ -42,5 +45,15 @@
   .team-name {
     font-size: 25px;
     margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 150px;
   }
 }
