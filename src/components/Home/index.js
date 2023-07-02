@@ -1,4 +1,5 @@
 // Write your code here
+// Write your code here
 import './index.css'
 import Loader from 'react-loader-spinner'
 import {Component} from 'react'
@@ -24,6 +25,12 @@ class Home extends Component {
     this.setState({isLoading: false, teamData: updatedData})
   }
 
+  renderLoading = () => {
+    ;<div>
+      <Loader type="Oval" color="#ffffff" height={50} width={50} />
+    </div>
+  }
+
   renderTeamCard = () => {
     const {teamData} = this.state
 
@@ -40,23 +47,17 @@ class Home extends Component {
     const {isLoading} = this.state
 
     return (
-      <div className="bg">
-        <div className="ipl-logo">
-          <img
-            className="logo"
-            src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
-            alt="ipl logo"
-          />
-          <h1 className="heading">IPL Dashboard</h1>
-        </div>
-        <div className="container">
-          {isLoading ? (
-            <div testid="loader">
-              <Loader type="Oval" color="#ffffff" height={50} width={50} />
-            </div>
-          ) : (
-            this.renderTeamCard()
-          )}
+      <div className="app-container">
+        <div className="bg">
+          <div className="ipl-logo">
+            <img
+              className="logo"
+              src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+              alt="ipl logo"
+            />
+            <h1 className="heading">IPL Dashboard</h1>
+          </div>
+          {isLoading ? this.renderLoading() : this.renderTeamCard()}
         </div>
       </div>
     )
